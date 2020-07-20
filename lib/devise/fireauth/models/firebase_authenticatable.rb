@@ -57,7 +57,7 @@ module Devise
           auth_hash = firebase_verification(id_token, handle)
           return nil if auth_hash.empty?
           # Create new user here and return user
-          self.from_firebase(auth_hash)
+          self.from_firebase(auth_hash, handle)
         end
 
         private
