@@ -54,7 +54,7 @@ module Devise
         # If the authentication fails you should return false
         #
         def firebase_authentication(id_token, handle)
-          auth_hash = firebase_verification(id_token, handle)
+          auth_hash = firebase_verification(id_token)
           return nil if auth_hash.empty?
           # Create new user here and return user
           self.from_firebase(auth_hash, handle)
