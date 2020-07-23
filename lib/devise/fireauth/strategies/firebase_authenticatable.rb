@@ -21,7 +21,7 @@ module Devise
         # mapping.to is a wrapper over the resource model
         #
         # Treat the password as idToken
-        resource = mapping.to.firebase_authentication(token, params[:user_handle])
+        resource = mapping.to.firebase_authentication(token, params)
 
         return fail! unless resource
 
@@ -39,7 +39,7 @@ module Devise
       end
 
       def authenticate
-        resource = mapping.to.firebase_authentication(token, params[:user_handle])
+        resource = mapping.to.firebase_authentication(token, params)
         # If authenticated, stop immediately - or continue
         resource ? success!(resource) : fail(resource)
       end
