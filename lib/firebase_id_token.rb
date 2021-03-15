@@ -22,7 +22,7 @@ module FirebaseIDToken
 
     GOOGLE_CERTS_URI = "https://www.googleapis.com/robot/v1/metadata/x509/securetoken@system.gserviceaccount.com"
     GOOGLE_ISSUER_PREFIX = "https://securetoken.google.com/" # Has a trailing `/'
-    GOOGLE_CERTS_EXPIRY = 3600 # 1 hour
+    GOOGLE_CERTS_EXPIRY = 7200 # 1 hour
 
     def initialize(aud:, expiry: GOOGLE_CERTS_EXPIRY)
       super()
